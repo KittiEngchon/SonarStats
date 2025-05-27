@@ -1,0 +1,49 @@
+// js/sonar.js
+
+const wallets = [
+  {
+    address: "0xWhaleAlpha",
+    txs: 542,
+    avgBuy: 950,
+    avgSell: 1320,
+    winRate: 82,
+    tags: ["whale", "sniper"],
+    isBot: false
+  },
+  {
+    address: "0xVCMoney",
+    txs: 18,
+    avgBuy: 50000,
+    avgSell: 3400,
+    winRate: 22,
+    tags: ["vc", "panic"],
+    isBot: true
+  },
+  {
+    address: "0xDarkSniper",
+    txs: 289,
+    avgBuy: 400,
+    avgSell: 650,
+    winRate: 76,
+    tags: ["sniper", "fomo"],
+    isBot: false
+  },
+  {
+    address: "0xInsider007",
+    txs: 55,
+    avgBuy: 100,
+    avgSell: 8000,
+    winRate: 91,
+    tags: ["insider", "chill"],
+    isBot: false
+  },
+  {
+    address: "0xRookieBot",
+    txs: 9,
+    avgBuy: 7500,
+    avgSell: 2300,
+    winRate: 15,
+    tags: ["panic"],
+    isBot: true
+  }
+];
