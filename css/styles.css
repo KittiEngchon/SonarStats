@@ -89,3 +89,14 @@ button:active {
 .tab-content.active {
   display: block;
 }
+.wallet-card {
+  background: #16212d;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 200, 255, 0.1);
+}
+.wallet-card strong {
+  color: #00bcd4;
+}
