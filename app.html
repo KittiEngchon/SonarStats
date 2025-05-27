@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SonarStats Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="SonarStats Logo" />
+    <h1>SonarStats</h1>
+    <p>ล้วงพฤติกรรมปลาวาฬก่อนใคร</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" onclick="switchTab('dashboard')">📊 Dashboard</button>
+    <button class="tab" onclick="switchTab('dna')">🧬 Wallet DNA</button>
+    <button class="tab" onclick="switchTab('mood')">🧠 Mood AI</button>
+    <button class="tab" onclick="switchTab('graph')">📈 Graph</button>
+    <button class="tab" onclick="switchTab('rank')">🏆 Rankings</button>
+  </nav>
+
+  <main>
+    <section id="dashboard" class="tab-content active">
+      <h2>📊 Whale Tracking Dashboard</h2>
+      <p>แสดงภาพรวมวาฬที่กำลังเคลื่อนไหวในตลาด</p>
+    </section>
+
+    <section id="dna" class="tab-content">
+      <h2>🧬 Wallet DNA Fingerprint</h2>
+      <p>วิเคราะห์นิสัย กระเป๋า Sniper, VC, Insider</p>
+    </section>
+
+    <section id="mood" class="tab-content">
+      <h2>🧠 Wallet Mood AI</h2>
+      <p>ตรวจจับอารมณ์กระเป๋า: Panic / FOMO / Whale Chill</p>
+    </section>
+
+    <section id="graph" class="tab-content">
+      <h2>📈 Technical Charts</h2>
+      <p>กราฟแบบเทคนิคเชิงลึก (TradingView / DexTools)</p>
+    </section>
+
+    <section id="rank" class="tab-content">
+      <h2>🏆 Wallet Rankings</h2>
+      <p>จัดอันดับผู้เล่นหลักในแต่ละ Pool</p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    function switchTab(id) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
