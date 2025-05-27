@@ -62,3 +62,53 @@ function renderWalletReport(wallets) {
   const container = document.getElementById("dashboard");
 
   wallets.forEac
+function renderDNATable(wallets) {
+  const tbody = document.querySelector("#dna-table tbody");
+  wallets.forEach(w => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${w.address}</td>
+      <td>${analyzeWalletDNA(w)}</td>
+      <td>${w.txs}</td>
+      <td>${w.winRate}%</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+function renderMoodStats(wallets) {
+  const container = document.getElementById("mood-stats");
+  wallets.forEach(w => {
+    const mood = getWalletMood(w);
+    const div = document.createElement("div");
+    div.className = "wallet-card";
+    div.innerHTML = `
+      <h3>${w.address}</h3>
+      <p>Mood: <strong>${mood}</strong></p>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function renderRanking(wallets) {
+  const tbody = document.querySelector("#ranking-table tbody");
+  // Mock sorting by profit (avgSell - avgBuy)
+  wallets.sort((a, b) => (b.avgSell - b.avgBuy) - (a.avgSell - a.avgBuy));
+  wallets.forEach(w => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${w.address}</td>
+      <td>${(w.avgSell - w.avgBuy).toLocaleString()} USD</td>
+      <td>${w.avgBuy}</td>
+      <td>${w.avgSell}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderWalletReport(wallets); // dashboard
+  renderDNATable(wallets);
+  renderMoodStats(wallets);
+  renderRanking(wallets);
+});
