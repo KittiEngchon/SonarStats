@@ -59,3 +59,33 @@ button:hover {
 button:active {
   transform: scale(0.98);
 }
+.tabs {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tabs .tab {
+  background: #1f2a3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tabs .tab.active {
+  background: #00bcd4;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 30px;
+}
+
+.tab-content.active {
+  display: block;
+}
